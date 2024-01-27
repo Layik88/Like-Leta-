@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join</title>
+</head>
+<style>
+    body {
+    margin: 0;
+    font-family: sans-serif, Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, #3d3939, #837b7b, #b67a7a, #383030);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: #999999;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+}
+
+.form {
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+</style>
+<body>
+    <div class="container">
+        <div class="form-container" id="loginContainer">
+            <form id="loginForm" class="form">
+                <h2>Login</h2>
+                <label for="loginUsername">Username:</label>
+                <input type="text" id="loginUsername" name="loginUsername" required>
+
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" name="loginPassword" required>
+
+                <button type="button" onclick="toggleForm('signupContainer')">Sign Up</button>
+                <button type="button" onclick="submitForm('loginForm')">Login</button>
+            </form>
+        </div>
+
+        <div class="form-container" id="signupContainer" style="display: none;">
+            <form id="signupForm" class="form">
+                <h2>Sign Up</h2>
+                <label for="signupUsername">Username:</label>
+                <input type="text" id="signupUsername" name="signupUsername" required>
+
+                <label for="signupEmail">Email:</label>
+                <input type="email" id="signupEmail" name="signupEmail" required>
+
+                <label for="signupPassword">Password:</label>
+                <input type="password" id="signupPassword" name="signupPassword" required>
+
+                <label for="signupConfirmPassword">Confirm Password:</label>
+                <input type="password" id="signupConfirmPassword" name="signupConfirmPassword" required>
+
+                <button type="button" onclick="toggleForm('loginContainer')"> Login</button>
+                <button type="button" onclick="submitForm('signupForm')">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+function toggleForm(containerId) {
+    const loginContainer = document.getElementById('loginContainer');
+    const signupContainer = document.getElementById('signupContainer');
+
+    if (containerId === 'signupContainer') {
+        loginContainer.style.display = 'none';
+        signupContainer.style.display = 'block';
+    } else {
+        loginContainer.style.display = 'block';
+        signupContainer.style.display = 'none';
+    }
+}
+
+function submitForm(formId) {
+    const form = document.getElementById(formId);
+
+    // Simulate form submission logic
+    const username = form.querySelector('input[name="loginUsername"]') || form.querySelector('input[name="signupUsername"]');
+    const password = form.querySelector('input[name="loginPassword"]') || form.querySelector('input[name="signupPassword"]');
+
+    // Add your authentication logic here
+    console.log(`Username: ${username.value}, Password: ${password.value}`);
+}
+    </script>
+</body>
+</html>

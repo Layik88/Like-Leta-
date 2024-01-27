@@ -1,0 +1,249 @@
+*{
+    list-style: none;
+    margin: 0;
+    font-family: sans-serif, Arial, Helvetica, sans-serif;
+    color: #ffffff;
+}
+html{
+  scroll-behavior: smooth;
+}
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin: 0;
+  background-color: #000000;
+  transition: background-color 0.3s ease;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #111111;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  animation: bounceInTop 2s ease-in-out;
+}
+@keyframes bounceInTop {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+  }
+  40% {
+      transform: translateY(-20px);
+  }
+  60% {
+      transform: translateY(-10px);
+  }
+}
+.logo-container img {
+  max-width: 20%;
+  height: auto;
+  border-radius: 50%;
+  transition: 0.5s ease-in;
+}
+.logo-container img:hover{
+  opacity: 0.5;
+}
+.nav-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #555555;
+  transition: 1s ease-in;
+}
+.nav-links a:hover{
+  text-decoration: none;
+  color: #888888;
+} 
+.nav-links a::after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ff0000;
+  transition: width 1s;
+}
+.nav-links a:hover::after{
+  width: 100%;
+}
+.nav-links i {
+  margin-right: 5px;
+  color: #888888;
+}
+
+/*----------------------------------------------------------------------------------------------------------------*/
+
+.typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #000000;
+  font-size: 1.5em;
+  margin: 0;
+  text-align: center;
+  height: 3em;
+  display: inline-block;
+}
+.the-animation p {
+  overflow: hidden;
+}
+
+#Home{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.wrapper{
+  color: #b89292;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+}
+.welcome{
+  font-weight: 600;
+  color: #e91c1c;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+.the-animation h3{
+  color: #e91c1c;
+  font-family: sans-serif, Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+}
+.HI{
+  color: rgb(0, 17, 255);
+}
+.roll, .role{
+    color: rgb(255, 0, 170);
+    font-weight: bolder;
+}
+.wrapper img{
+   width: 20%;
+   border-radius: 100%;
+   float: left;
+   margin-left: 20px;
+   box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5);
+}
+.no-border-shadow{
+  box-shadow: none;
+}
+.contact{
+   color: #fd0000;
+   margin-right: 225px;
+} 
+.contact a{
+   margin-right: 25px;
+   font-size: xx-large;
+}
+.contact a i{
+  transition: 1s ;
+}
+.contact a i:hover{
+   color: #fd0000;
+}
+#animatedText {
+  font-weight: bold;
+  color: rgb(38, 0, 255);
+}
+.portfolio{
+  color: rgb(38, 0, 255);
+}
+.animated-text {
+  margin-bottom: 10px;
+  margin-top: 20px;
+  height: 1.5em; 
+  overflow: hidden; 
+}
+/*---------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+#Portfolio {
+  margin-top: 200px;
+  position: relative; 
+  height: 100vh; 
+}
+#Portfolio h2{
+  text-align: center;
+  color: #555555;
+  bottom: 0;
+}
+#Portfolio .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.portfolioImage {
+  position: absolute;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.5s ease-in-out;
+  width: 60%;
+  max-width: 100%; 
+  margin: 0 10px;
+  border-radius: 20px;
+  display: block;
+}
+
+.portfolioImage.active {
+  opacity: 1;
+}
+
+
+#Portfolio .container a {
+  text-decoration: none; 
+  color: inherit; 
+  display: block; 
+}
+
+
+/*====================================================================================================================*/
+
+
+@media only screen and (max-width: 500px){
+  .wrapper img{
+    display: none;
+  }
+  .navbar{
+    flex-direction: column;
+  }
+  .logo-container img{
+    display: none;
+  }
+  .nav-links ul{
+    flex-direction: column;
+    line-height: 10vh;
+  }
+  .contact{
+    flex-wrap: nowrap;
+  }
+}
+@media only screen and (max-width: 320px){
+  .contact a i {
+    color: #ff0000;
+    font-size: x-large;
+  }
+  .contact{
+    margin: 30px;
+  }
+  #Home{
+    margin: 30px;
+  }
+}
